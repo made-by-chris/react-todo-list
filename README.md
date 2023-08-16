@@ -1,85 +1,81 @@
-# react-todo-list - A To-Do App with React & Tailwind CSS
+# react-todo-list Repository Branch Structure
 
-This repository walks you through the creation of a modern web application,
-helping you understand the intricacies of React component structure, state
-management, and styling with Tailwind CSS. Our focus is just on _composition_ of
-components in this exercise
+This repository is structured to guide learners through a series of progressive
+exercises in React. You'll build a To-Do app from scratch, and then extend it
+gradually with new features.
 
-## Getting Started
+## Branches Overview
 
-### Clone the Repository
+### `main`
 
-Before you begin, make sure to clone this repository to your local machine.
+- **Description**: A central hub with an overview of all branches. Ideal for
+  lost travelers.
+- **Next Step**: Start with `components-start` for the component-building
+  exercise.
 
-```bash
-git clone https://github.com/made-by-chris/react-todo-list.git
-cd react-todo-list
-npm install
-```
+### `components-start`
 
-### Start the Development Server
+- **Description**: The starting point for the component-building exercise.
+- **Tasks**: Build the basic UI components for the To-Do app.
+- **Solution**: Check `components-solution` for the completed exercise.
 
-Once all packages are installed, start the development server.
+### `crud-start`
 
-```bash
-npm run dev
-```
+- **Description**: Begin the implementation of Create, Read, Update, and Delete
+  operations for the To-Do app.
+- **Tasks**: Add, delete items on the To-Do list. Update their checkbox and text
+  values.
+- **Solution**: Refer to `crud-solution` for a fully-implemented CRUD.
 
-Your app should now be running on
-[http://localhost:5173](http://localhost:5173).
+### `props-start`
 
-## Project Structure
+- **Description**: The starting point for the props exercise.
+- **Tasks**: Implement props to pass data between components.
+- **Solution**: Check `props-solution` for the completed exercise.
 
-Here's a brief overview of the main files and directories:
+### `crud-extended-start`
 
-- `src/components/`: Contains all the UI components for our To-Do App.
-  - `TodoList.jsx`: Displays the list of to-dos.
-  - `TodoItem.jsx`: Represents an individual to-do item.
-  - `AddTodoForm.jsx`: A form to add new to-dos.
-- `src/App.jsx`: The main application component.
-- `src/main.jsx`: The entry point for our React application.
+- **Description**: Begin the implementation of extended CRUD functionalities.
+- **Tasks**: Add a search bar to filter the To-Do list. Add a button to clear
+  all completed items.
+- **Solution**: Refer to `crud-extended-solution` for a fully-implemented
 
-See the final UI of the app below:
+### `improved-search-start`
 
-![Screenshot or mockup of the final app](link-to-image)
+- **Description**: The starting point for the state exercise.
+- **Tasks**: Implement sorting, tags and word filters.
+- **Solution**: Check `improved-search-solution` for the completed exercise.
 
-## Tasks
+### `unit-test-start`
 
-- **`AddTodoForm.jsx`:**
-  - Create a basic form with a text input and a submit button.
-  - Export the `AddTodoForm` component.
+- **Description**: The starting point for the unit testing exercise.
+- **Tasks**: Implement unit tests for the To-Do app.
+- **Solution**: Check `unit-test-solution` for the completed exercise.
 
-- **`App.jsx`:**
-  - Import the `AddTodoForm` component.
-  - Render the `AddTodoForm` component on the screen. Check it in your browser!
+### `react-testing-library-start`
 
-Continue this basic flow of creating and rendering a component in React. Now,
-for the list area:
+- **Description**: The starting point for the integration testing exercise.
+- **Tasks**: Implement integration tests for the To-Do app.
+- **Solution**: Check `react-testing-library-solution` for the completed
+  exercise.
 
-- **`TodoItem.jsx`:**
-  - Create a basic HTML list item with a checkbox input, a text input, and a
-    delete button.
-  - Use basic fake text in the text input for now.
-  - Export the `TodoItem` component.
+### `trello-start`
 
-- **`TodoList.jsx`:**
-  - Import the `TodoItem` component.
-  - Render several `TodoItem`s to simulate a working to-do list.
+- **Description**: The starting point for the Trello exercise.
+- **Tasks**: Convert the To-Do app into a Trello clone with multiple columns.
+- **Next Step**: Check `trello-solution` for the completed exercise.
 
-- **`App.jsx`:**
-  - Import the `TodoList` component.
-  - Render the `TodoList` component on the screen after the `AddTodoForm`
-    component. Check it in your browser!
+---
 
-- **Bonus - Style with Tailwind**:
-  - Use Tailwind CSS classes to style your components. Remember, it's all about
-    utility-first design!
+## Helpful Tips
 
-## Troubleshooting
+- Always ensure you're on the right branch before starting an exercise.
+- Use this `main` branch as a reference whenever you're unsure about the
+  progression.
 
-Check the `components` branch for a working example. Best of luck!
+---
 
-## Helpful Resources
+## External Resources
 
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 - [React Documentation](https://reactjs.org/docs/getting-started.html)
