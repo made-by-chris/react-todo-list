@@ -23,15 +23,16 @@ gradually with new features.
 
 - **Description**: Begin the implementation of Create, Read, Update, and Delete
   operations for the To-Do app.
-- **Tasks**: Add, delete items on the To-Do list. Update their checkbox and text
-  values.
+- **Tasks**: Create and list items on the To-Do list.
 - **Solution**: Refer to `crud-solution` for a fully-implemented CRUD.
 
-### `props-start`
+### `crud-2-start`
 
-- **Description**: The starting point for the props exercise.
-- **Tasks**: Implement props to pass data between components.
-- **Solution**: Check `props-solution` for the completed exercise.
+- **Description**: Begin the implementation of Create, Read, Update, and Delete
+  operations for the To-Do app.
+- **Tasks**: Delete items on the To-Do list. Toggle their checkbox values and
+  text values.
+- **Solution**: Refer to `crud-2-solution` for a fully-implemented CRUD.
 
 ### `crud-extended-start`
 
