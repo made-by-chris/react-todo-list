@@ -1,16 +1,17 @@
-# react-todo-list - A To-Do App with React & Tailwind CSS
+# react-todo-list - Extended CRUD functionalities in our To-Do App
 
-This repository builds upon our previous lesson about component composition.
-Now, we delve deeper into handling CRUD operations with React. By the end,
-you'll be able to Create, Read, Update, and Delete todo items from your list,
-all powered by React state!
+Having learned the basics of CRUD operations by adding items to our To-Do list,
+it's time to take things a notch up. In this lesson, we will focus on the
+additional CRUD operations: Update and Delete. By the end of this, you'll be
+able to not only add tasks but also mark them as complete, update their
+descriptions, and remove them.
 
-### Clone the Repository ( you can also just switch to the `crud-start` branch in your existing repo)
+### Clone the Repository (or simply switch to the `crud-2-start` branch in your existing repo)
 
 ```bash
-git clone https://github.com/made-by-chris/react-todo-list.git react-todo-list-crud
-cd react-todo-list-crud
-git checkout -b crud-start
+git clone https://github.com/made-by-chris/react-todo-list.git react-todo-list-crud-2
+cd react-todo-list-crud-2
+git checkout -b crud-2-start
 npm install
 ```
 
@@ -22,65 +23,65 @@ npm run dev
 
 ## Project Structure
 
-Here's a brief overview of the main files and directories:
+Just a refresher, here are the main files you'll be working with:
 
 - `src/components/`: Contains all the UI components for our To-Do App.
   - `TodoList.jsx`: Displays the list of to-dos.
-  - `TodoItem.jsx`: Represents an individual to-do item.
+  - `TodoItem.jsx`: Represents an individual to-do item with added
+    functionalities.
   - `AddTodoForm.jsx`: A form to add new to-dos.
-- `src/App.jsx`: The main application component.
-- `src/main.jsx`: The entry point for our React application.
+- `src/App.jsx`: The main application component where state and main handlers
+  are managed.
 
 ## Tasks
 
-**1. Setting up CRUD Operations:**
+**1. Enhance CRUD Operations:**
 
-We're going to combine what we've learned about CRUD and props. We pass some
-data down from the top-level `App` component to the `TodoList` ( and then to the
-`TodoItem` component). We also pass down a function to the `AddTodoForm`
-component to add new to-dos to the list. We need to implement the following:
+Let's walk through the process of enhancing our to-do list.
 
-- **`App.jsx`:**
-  - We will keep the main list of to-dos in a useState here.
-  - Make a useState variable called `todoListItems` to store the list of to-dos.
-  - Handle CRUD operations at this top-level and pass down relevant props and
-    handlers to child components.
-  - create a `createTodo` function that adds a new to-do to the list.
-  - pass the createTodo function down to the `AddTodoForm` component as a prop.
-  - pass the todoListItems down to the `TodoList` component as a prop.
+- **Step 1: Delete a Todo**
+  - **`App.jsx`:** Create a function named `deleteTodo` that will accept a
+    todo's id and filter it out from `todoListItems`.
+  - **`TodoList.jsx`:** Pass down the `deleteTodo` function to each `TodoItem`
+    as a prop.
+  - **`TodoItem.jsx`:** Add a "Delete" button next to each todo. When clicked,
+    this button should call the `deleteTodo` function, passing the todo's id.
 
-- **`AddTodoForm.jsx`:**
-  - Implement state (`useState`) to track the text input value of the form.
-  - Make a useState variable called `formInputValue` to store the text input
-    value.
-  - Add a `handleSubmit` function that pushes calls `props.createTodo` function
-    (passed down as a prop) with the current input value.
-  - Make sure to prevent the default behavior of form submission to stop the
-    page from reloading.
+- **Step 2: Toggle Todo Completion**
+  - **`App.jsx`:** Implement a function called `toggleCompletion` that toggles a
+    todo's completion status. (it should take in the todo's id as a parameter)
+  - **`TodoList.jsx`:** Pass down the `toggleCompletion` function to each
+    `TodoItem`.
+  - **`TodoItem.jsx`:** Introduce a checkbox to represent the completion status
+    of each todo. When toggled, this checkbox should call the `toggleCompletion`
+    function. (passing the todo's id)
 
-- **`TodoList.jsx`:**
-  - Use the list of to-dos (from state) to map and render each `TodoItem`.
-  - Pass down the each item's info down to each `TodoItem` component as a prop.
+- **Step 3: Edit Todo Text**
+  - **`App.jsx`:** Develop a function named `updateTodoText` that will update a
+    todo's text based on its id. ( it should take in the id and the new text as
+    parameters)
+  - **`TodoList.jsx`:** Pass the `updateTodoText` function down to each
+    `TodoItem`.
+  - **`TodoItem.jsx`:** Allow users to edit the text of a todo. Once the edit is
+    finalized, call the `updateTodoText` function with the todo's id and the new
+    text.
 
-- **`TodoItem.jsx`:**
-  - take `props.todo.text` and render it in the component. You should now see
-    the list of to-dos rendered on the page! Check it in the browser.
+**2. Bonus - Enhance Tailwind Styles**:
 
-**2. Bonus - Style with Tailwind**:
-
-- style completed todoItems differently from active ones.
-- Add transition effects for adding, updating, or deleting to-dos for better UX.
+- Adjust styles to visually distinguish completed todos from the others.
+- Style the delete and edit functionalities for an improved UX.
+- Perhaps include animations or transitions when a todo is deleted or its status
+  is toggled?
 
 ## Troubleshooting
 
-If you're running into issues with setting up CRUD, check the `crud-solution`
-branch for a full implementation. Keep up the good work!
+If you run into any roadblocks, don't get discouraged. Check out the
+`crud-2-solution` branch for a fully worked-out implementation and see how it
+compares to your effort.
 
 ## Helpful Resources
 
-- [Prevent Default](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault)
-- [State and Lifecycle in React](https://react.dev/learn/state-a-components-memory)
-- [Handling Events in React](https://react.dev/learn/responding-to-events)
-- [Props in React](https://react.dev/learn/passing-props-to-a-component)
-- [React Documentation](https://reactjs.org/docs/getting-started.html)
+- [React Event Handling](https://react.dev/learn/responding-to-events)
+- [Conditional Rendering in React](https://react.dev/learn/conditional-rendering)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [React Documentation](https://reactjs.org/docs/getting-started.html)
