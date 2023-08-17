@@ -1,17 +1,15 @@
-# react-todo-list - Extended CRUD functionalities in our To-Do App
+# react-todo-list - Implementing Search and Clear
 
-Having learned the basics of CRUD operations by adding items to our To-Do list,
-it's time to take things a notch up. In this lesson, we will focus on the
-additional CRUD operations: Update and Delete. By the end of this, you'll be
-able to not only add tasks but also mark them as complete, update their
-descriptions, and remove them.
+we will add a search bar to filter through the tasks and a button to clear all
+completed items.
 
-### Clone the Repository (or simply switch to the `crud-2-start` branch in your existing repo)
+### Clone the Repository (or simply switch to the `crud-3-start` branch in your existing repo)
 
 ```bash
-git clone https://github.com/made-by-chris/react-todo-list.git react-todo-list-crud-2
-cd react-todo-list-crud-2
-git checkout -b crud-2-start
+git clone https://github.com/made-by-chris/react-todo-list.git react-todo-list-crud-3
+cd react-todo-list-crud-3
+git checkout -b
+crud-extended-start 
 npm install
 ```
 
@@ -21,67 +19,48 @@ npm install
 npm run dev
 ```
 
-## Project Structure
-
-Just a refresher, here are the main files you'll be working with:
-
-- `src/components/`: Contains all the UI components for our To-Do App.
-  - `TodoList.jsx`: Displays the list of to-dos.
-  - `TodoItem.jsx`: Represents an individual to-do item with added
-    functionalities.
-  - `AddTodoForm.jsx`: A form to add new to-dos.
-- `src/App.jsx`: The main application component where state and main handlers
-  are managed.
-
 ## Tasks
 
-**1. Enhance CRUD Operations:**
+**1. Extend the CRUD Operations:**
 
-Let's walk through the process of enhancing our to-do list.
+- **Step 1: Make a new component called `SearchBar`**
+  - **`SearchBar.jsx`:** Implement a search bar that takes has an input field
+    and a button.
+    - its value should come from `props.filterInput`
+    - when the user types in the search element (onChange event), you should
+      call `props.setFilterInput` with the current value of the input field.
 
-- **Step 1: Delete a Todo**
-  - **`App.jsx`:** Create a function named `deleteTodo` that will accept a
-    todo's id and filter it out from `todoListItems`.
-  - **`TodoList.jsx`:** Pass down the `deleteTodo` function to each `TodoItem`
-    as a prop.
-  - **`TodoItem.jsx`:** Add a "Delete" button next to each todo. When clicked,
-    this button should call the `deleteTodo` function, passing the todo's id.
+- **Step 2: Add a Search Bar to Filter To-Dos**
+  - **`App.jsx`:** Implement `filterInput` with useState to hold the current
+    search term.
+  - pass `filterInput` and `setFilterInput` to the `SearchBar` component.
+  - make an arrow function called filteredTodos that returns a filtered list of
+    to-dos based on the current search term. Use the `filter` method on
+    todoListItems, to compare the `todoItem`'s `text` to the `filterInput`.
+  - pass the result of `filteredTodos` to the `TodoList` component instead of
+    `todoListItems`. You should now see the items automatically filtering based
+    on matching text!
 
-- **Step 2: Toggle Todo Completion**
-  - **`App.jsx`:** Implement a function called `toggleCompletion` that toggles a
-    todo's completion status. (it should take in the todo's id as a parameter)
-  - **`TodoList.jsx`:** Pass down the `toggleCompletion` function to each
-    `TodoItem`.
-  - **`TodoItem.jsx`:** Introduce a checkbox to represent the completion status
-    of each todo. When toggled, this checkbox should call the `toggleCompletion`
-    function. (passing the todo's id)
+- **Step 3: Clear All Completed To-Dos**
+  - **`App.jsx`:** Add a function named `clearCompleted` that filters out all
+    completed items from `todoListItems`.
+  - Implement a "Clear Completed" button. When clicked, it should call the
+    `clearCompleted` function.
 
-- **Step 3: Edit Todo Text**
-  - **`App.jsx`:** Develop a function named `updateTodoText` that will update a
-    todo's text based on its id. ( it should take in the id and the new text as
-    parameters)
-  - **`TodoList.jsx`:** Pass the `updateTodoText` function down to each
-    `TodoItem`.
-  - **`TodoItem.jsx`:** Allow users to edit the text of a todo. Once the edit is
-    finalized, call the `updateTodoText` function with the todo's id and the new
-    text.
+**2. Bonus - Enhance Styles with Tailwind**:
 
-**2. Bonus - Enhance Tailwind Styles**:
-
-- Adjust styles to visually distinguish completed todos from the others.
-- Style the delete and edit functionalities for an improved UX.
-- Perhaps include animations or transitions when a todo is deleted or its status
-  is toggled?
+- Style the search bar elegantly.
+- Style the "Clear Completed" button to make it stand out but not overshadow
+  other elements.
 
 ## Troubleshooting
 
-If you run into any roadblocks, don't get discouraged. Check out the
-`crud-2-solution` branch for a fully worked-out implementation and see how it
-compares to your effort.
+If you face any challenges or get stuck, no worries! You can always refer to the
+`crud-3-solution` branch to check out the fully-implemented features.
 
 ## Helpful Resources
 
-- [React Event Handling](https://react.dev/learn/responding-to-events)
-- [Conditional Rendering in React](https://react.dev/learn/conditional-rendering)
+- [Handling Input with React](https://react.dev/learn/forms-in-react)
+- [React Conditional Rendering](https://react.dev/learn/conditional-rendering)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 - [React Documentation](https://reactjs.org/docs/getting-started.html)
