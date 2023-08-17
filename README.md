@@ -34,18 +34,18 @@ gradually with new features.
   text values.
 - **Solution**: Refer to `crud-2-solution` for a fully-implemented CRUD.
 
-### `crud-extended-start`
+### `crud-3-start`
 
 - **Description**: Begin the implementation of extended CRUD functionalities.
 - **Tasks**: Add a search bar to filter the To-Do list. Add a button to clear
   all completed items.
-- **Solution**: Refer to `crud-extended-solution` for a fully-implemented
+- **Solution**: Refer to `crud-3-solution` for a fully-implemented
 
-### `improved-search-start`
+### `crud-4-start`
 
 - **Description**: The starting point for the state exercise.
 - **Tasks**: Implement sorting, tags and word filters.
-- **Solution**: Check `improved-search-solution` for the completed exercise.
+- **Solution**: Check `crud-4-solution` for the completed exercise.
 
 ### `unit-test-start`
 
